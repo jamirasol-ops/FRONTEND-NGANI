@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -116,28 +116,20 @@ export default function Home() {
 
         </div>
 
-        {/* Profile Image Placeholder */}
+        {/* Profile Image */}
         <div className="flex flex-1 justify-center">
-
           <div className="relative flex h-72 w-72 items-center justify-center rounded-full border-8 border-white bg-pink-200 shadow-xl md:h-96 md:w-96">
 
-            <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-pink-300">
+            <Image
+              src="/image/Janel.jpeg"
+              alt="Janel Mirasol"
+              fill
+              priority
+              className="rounded-full object-cover"
+              sizes="(max-width: 768px) 288px, 384px"
+            />
 
-              <Heart
-                size={65}
-                className="mb-3 fill-pink-500 text-pink-500"
-              />
-
-              <span className="text-lg font-bold text-pink-700">
-                Janel Mirasol
-              </span>
-
-              <span className="mt-1 text-sm text-pink-600">
-                Personal Portfolio
-              </span>
-
-            </div>
-
+            {/* Floating Icons */}
             <div className="absolute -right-2 top-10 rounded-2xl bg-white p-4 shadow-lg">
               <Code2 className="text-pink-500" size={30} />
             </div>
@@ -147,7 +139,6 @@ export default function Home() {
             </div>
 
           </div>
-
         </div>
 
       </section>
