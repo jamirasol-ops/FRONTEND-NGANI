@@ -1,155 +1,186 @@
+
+import Link from "next/link";
 import {
-  User,
+  ArrowRight,
   Code2,
   Heart,
-  Target,
-  Lightbulb,
+  Laptop,
+  Sparkles,
+  Camera,
 } from "lucide-react";
-import Image from "next/image";
 
 const skills = [
-  "JavaScript / TypeScript",
-  "React & Next.js",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
   "Tailwind CSS",
-  "Node.js",
-  "MySQL / Oracle",
-  "Git & GitHub",
-  "REST APIs & GraphQL",
-  "Shadcn UI",
 ];
 
-export default function About() {
+export default function Home() {
   return (
-    <div className="container mx-auto max-w-4xl space-y-10 px-6 py-12">
+    <div className="min-h-screen bg-pink-50">
 
-      <div>
-        <p className="mb-2 font-semibold text-pink-500">
-          GET TO KNOW ME
-        </p>
+      <section className="container mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 py-20 md:flex-row md:py-32">
 
-        <h1 className="text-4xl font-extrabold text-gray-900">
-          About Me
-        </h1>
+        {/* Introduction */}
+        <div className="flex-1 space-y-6 text-center md:text-left">
 
-        <p className="mt-3 text-lg text-gray-500">
-          A little introduction about myself, my dreams, and my journey as a student.
-        </p>
-      </div>
-
-      {/* My Story */}
-      <div className="pink-card space-y-5 p-7">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-xl bg-pink-100 p-3">
-            <User className="text-pink-600" size={25} />
+          <div className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white px-4 py-2 text-sm font-medium text-pink-600">
+            <Sparkles size={16} />
+            Welcome to My Portfolio
           </div>
 
-          <h2 className="text-xl font-bold">
-            My Story
-          </h2>
-        </div>
-
-        <p className="leading-8 text-gray-600">
-          Hello! My name is Janel Mirasol. I am a simple person
-          who dreams of finishing college and having a better
-          future. I am currently taking Bachelor of Science in
-          Information Technology (BSIT).
-        </p>
-
-        <p className="leading-8 text-gray-600">
-          I enjoy learning new things, exploring technology,
-          and gaining new experiences. As a student, I know
-          that there are still many things I need to learn,
-          but I am always willing to improve myself and do
-          my best in everything I do.
-        </p>
-
-        <p className="leading-8 text-gray-600">
-          One of my biggest dreams is to graduate, make my
-          family proud, and become successful someday.
-          I believe that with patience, hard work, and
-          determination, I can achieve the goals I have
-          always dreamed of.
-        </p>
-
-      </div>
-
-      {/* Skills */}
-      <div className="pink-card space-y-5 p-7">
-
-        <div className="flex items-center gap-3">
-          <div className="rounded-xl bg-pink-100 p-3">
-            <Code2 className="text-pink-600" size={25} />
-          </div>
-
-          <h2 className="text-xl font-bold">
-            Skills & Technologies
-          </h2>
-        </div>
-
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full bg-pink-50 px-4 py-2 text-sm font-medium text-pink-700"
-            >
-              {skill}
+          <h1 className="text-4xl font-extrabold leading-tight text-gray-900 md:text-6xl">
+            Hi, I'm{" "}
+            <span className="text-pink-500">
+              Janel Mirasol!
             </span>
-          ))}
-        </div>
+          </h1>
 
-      </div>
+          <h2 className="text-xl font-semibold text-pink-600 md:text-2xl">
+            Aspiring Web Developer
+          </h2>
 
-      {/* Passion and Goal */}
-      <div className="grid gap-5 md:grid-cols-2">
-
-        <div className="pink-card p-6">
-          <Heart className="mb-4 text-pink-500" size={30} />
-
-          <h3 className="mb-2 text-lg font-bold">
-            My Passion
-          </h3>
-
-          <p className="text-sm leading-7 text-gray-600">
-            I enjoy learning new things, exploring technology,
-            and discovering experiences that help me grow
-            as a person and as a student.
+          <p className="max-w-xl text-base leading-8 text-gray-600 md:text-lg">
+            Hello! I am Janel Mirasol, an Information
+            Technology student who enjoys learning new
+            things and exploring the world of technology.
+            I created this portfolio to share my personal
+            background, college journey, hobbies, and
+            interests.
           </p>
-        </div>
 
-        <div className="pink-card p-6">
-          <Target className="mb-4 text-pink-500" size={30} />
-
-          <h3 className="mb-2 text-lg font-bold">
-            My Goal
-          </h3>
-
-          <p className="text-sm leading-7 text-gray-600">
-            My goal is to finish my college education,
-            graduate with a BSIT degree, build a successful
-            career, and make my family proud.
+          <p className="text-gray-600">
+            My dream is to finish college, achieve my goals,
+            and build a better future. Thank you for visiting
+            my portfolio!
           </p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 rounded-full bg-pink-500 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-pink-600"
+            >
+              About Me
+              <ArrowRight size={18} />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="rounded-full border border-pink-400 bg-white px-6 py-3 font-semibold text-pink-600 transition hover:bg-pink-50"
+            >
+              Contact Me
+            </Link>
+
+          </div>
+
+          {/* Social Media */}
+          <div className="flex justify-center gap-5 pt-4 md:justify-start">
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="text-gray-500 transition hover:text-pink-500"
+            >
+              <Code2 size={23} />
+            </a>
+
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="text-gray-500 transition hover:text-pink-500"
+            >
+              <Camera size={23} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="text-gray-500 transition hover:text-pink-500"
+            >
+              <Laptop size={23} />
+            </a>
+
+          </div>
+
         </div>
 
-      </div>
+        {/* Profile Image Placeholder */}
+        <div className="flex flex-1 justify-center">
 
-      {/* Personal Motto */}
-      <div className="pink-card flex gap-4 p-6">
-        <Lightbulb
-          className="shrink-0 text-pink-500"
-          size={30}
-        />
+          <div className="relative flex h-72 w-72 items-center justify-center rounded-full border-8 border-white bg-pink-200 shadow-xl md:h-96 md:w-96">
 
-        <div>
-          <h3 className="font-bold">
-            My Personal Motto
-          </h3>
+            <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-pink-300">
 
-          <p className="mt-2 italic text-gray-600">
-            "Small progress is still progress. Never give up on your dreams."
+              <Heart
+                size={65}
+                className="mb-3 fill-pink-500 text-pink-500"
+              />
+
+              <span className="text-lg font-bold text-pink-700">
+                Janel Mirasol
+              </span>
+
+              <span className="mt-1 text-sm text-pink-600">
+                Personal Portfolio
+              </span>
+
+            </div>
+
+            <div className="absolute -right-2 top-10 rounded-2xl bg-white p-4 shadow-lg">
+              <Code2 className="text-pink-500" size={30} />
+            </div>
+
+            <div className="absolute -bottom-2 -left-3 rounded-2xl bg-white p-4 shadow-lg">
+              <Sparkles className="text-pink-500" size={30} />
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Skills Preview */}
+      <section className="border-t border-pink-100 bg-white py-16">
+
+        <div className="container mx-auto max-w-5xl px-6 text-center">
+
+          <h2 className="text-3xl font-bold text-gray-900">
+            My Skills
+          </h2>
+
+          <p className="mt-3 text-gray-500">
+            Technologies and tools I am learning and exploring.
           </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+
+            {skills.map((skill) => (
+              <span
+                key={skill}
+                className="rounded-full border border-pink-200 bg-pink-50 px-5 py-2 text-sm font-medium text-pink-700"
+              >
+                {skill}
+              </span>
+            ))}
+
+          </div>
+
         </div>
-      </div>
+
+      </section>
 
     </div>
   );
